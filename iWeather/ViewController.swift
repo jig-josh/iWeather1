@@ -9,8 +9,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var getTempIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var tempView: UIView!
+    @IBOutlet weak var cityNameTxtFld: UITextField!
+    @IBOutlet weak var currentTempLbl: UILabel!
+    @IBOutlet weak var minTempLbl: UILabel!
+    @IBOutlet weak var maxTempLbl: UILabel!
+    
+    
     @IBAction func cityWeatherRequest(_ sender: Any) {
-        if let cityName = self.cityNameTextFld.text, cityName != "" {
+        
+        if let cityName = self.cityNameTxtFld.text, cityName != "" {
             self.getTempIndicator.isHidden = false
             self.getTempIndicator.startAnimating()
             WebServiceManager.sharedInstance.callWeatherAPI(forCity: cityName) { (success, message, data) in
@@ -48,6 +57,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.tempView.isHidden = true
+        self.getTempIndicator.isHidden = true
     }
 
 

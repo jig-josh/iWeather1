@@ -106,10 +106,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="86o-fa-jUs">
+                                <rect key="frame" x="47" y="499" width="228" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yFi-0R-aej">
+                                <rect key="frame" x="68" y="678" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="cityNameTxtFld" destination="FZh-ni-hAs" id="aZr-Tp-Cqz"/>
+                        <outlet property="currentTempLbl" destination="s2a-EU-DrJ" id="Oca-Fi-pei"/>
+                        <outlet property="getTempIndicator" destination="86o-fa-jUs" id="oKk-Dz-WUm"/>
+                        <outlet property="maxTempLbl" destination="pgE-1C-7iU" id="jeg-Fu-zfP"/>
+                        <outlet property="minTempLbl" destination="fdx-wa-ROx" id="Ewo-yM-1iP"/>
+                        <outlet property="tempView" destination="yFi-0R-aej" id="7pQ-Pd-ce6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
