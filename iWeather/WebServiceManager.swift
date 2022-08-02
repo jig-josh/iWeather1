@@ -11,7 +11,10 @@ class WebServiceManager {
     
     static let sharedInstance = WebServiceManager()
     
-    func callWeatherAPI(forCity city: String, completionHandler: @escaping (_ success : Bool, _ message : String, _ responseStructure : MainDesc?) -> ()) {
+    func callWeatherAPI(forCity city: String,
+                        completionHandler: @escaping (_ success : Bool,
+                                                      _ message : String,
+                                                      _ responseStructure : MainDesc?) -> ()) {
         
         if let callingUrl = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(city)&appid=\(Constants.apiKey)&units=Imperial") {
             
@@ -24,7 +27,9 @@ class WebServiceManager {
                 }
                 if let responseCode = response as? HTTPURLResponse, responseCode.statusCode == 200{
                     if let json = try? JSONSerialization.jsonObject(with: data!, options: []) {
-                        completionHandler(true, "Success", MainDesc((json as! [String : Any])["Main"] as! [String: Any] ))
+                        completionHandler(true,
+                                          "Success",
+                                          MainDesc(json as! [String : Any])) //["Main"] as! [String: Any] ))
                         return
                     }
                 } else {

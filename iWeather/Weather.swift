@@ -14,6 +14,7 @@ struct MainDesc {
     var maxTemperature : Double
     var pressure : Int
     var humidity : Float
+    
     init(_ decoder: [String : Any]) {
         self.temperature = decoder["temp"] as? Double ?? 0.0
         self.feelsLike = decoder["feels_like"] as? Double ?? 0.0

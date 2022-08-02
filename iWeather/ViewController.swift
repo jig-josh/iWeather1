@@ -38,9 +38,9 @@ class ViewController: UIViewController {
                 if success, let responseData = data {
                     DispatchQueue.main.async {
                         self.tempView.isHidden = false
-                        self.currentTempLbl.text = "\(responseData.temp)"
-                        self.minTempLbl.text = "\(responseData.temp_min)"
-                        self.maxTempLbl.text = "\(responseData.temp_max)"
+                        self.currentTempLbl.text = "\(responseData.temperature)"
+                        self.minTempLbl.text = "\(responseData.minTemperature)"
+                        self.maxTempLbl.text = "\(responseData.maxTemperature)"
                     }
                 } else {
                     DispatchQueue.main.async {
