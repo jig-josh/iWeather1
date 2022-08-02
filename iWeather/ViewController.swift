@@ -16,6 +16,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var minTempLbl: UILabel!
     @IBOutlet weak var maxTempLbl: UILabel!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        self.tempView.isHidden = true
+        self.getTempIndicator.isHidden = true
+    }
+    
     
     @IBAction func cityWeatherRequest(_ sender: Any) {
         
@@ -54,12 +61,12 @@ class ViewController: UIViewController {
         alert.addAction(alertAction)
         self.present(alert, animated: true, completion: nil)
     }
-    override func viewDidLoad() {
+    /* override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.tempView.isHidden = true
         self.getTempIndicator.isHidden = true
-    }
+    } */
 
 
 }
