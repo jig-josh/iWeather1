@@ -29,7 +29,7 @@ class WebServiceManager {
                     if let json = try? JSONSerialization.jsonObject(with: data!, options: []) {
                         completionHandler(true,
                                           "Success",
-                                          MainDesc(json as! [String : Any])) //["Main"] as! [String: Any] ))
+                                          MainDesc((json as! [String : Any])["main"] as! [String : Any]))
                         return
                     }
                 } else {
